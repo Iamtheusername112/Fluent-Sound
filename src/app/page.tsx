@@ -4,9 +4,10 @@ import { useState } from 'react'
 import MaxWidthWrapper from '@/components/common/MaxWidthWrapper'
 import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
-import { ChevronRight, Play, Sparkles } from 'lucide-react'
+import { Brain, ChevronRight, Headphones, Play, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Card } from '@/components/ui/card'
 
 export default function Home() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
@@ -75,6 +76,33 @@ export default function Home() {
             )}
           </div>
         </div>
+      </section>
+      <section className="container mx-auto py-20 px-60">
+        {
+          [
+            {
+              icon: <Headphones className='w-6 h-6'/>,
+              title: "Active Listening",
+              description: "Practice listening to native speakers and improve your comprehension skills."
+            },
+            {
+              icon: <Brain className='w-6 h-6'/>,
+              title: "AI Analysis",
+              description: "Get instant quizzes to test your understanding."
+            },
+            {
+              icon: <Play className='w-6 h-6'/>,
+              title: "Interactive exercises",
+              description: "Engage with AI-generated exercises to reinforce your learning."
+            },
+          ].map((feature, i ) => (
+            <Card key={i} className='p-6 hover:shadow-lg transition-shadow'>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
+              {feature.icon}
+              </div>
+            </Card>
+          ))
+        }
       </section>
     </MaxWidthWrapper>
   )
