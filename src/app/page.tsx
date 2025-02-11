@@ -87,38 +87,39 @@ export default function Home() {
           </p>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {
-            [
-              {
-                icon: <Headphones className='w-6 h-6'/>,
-                title: "Active Listening",
-                description: "Practice listening to native speakers and improve your comprehension skills."
-              },
-              {
-                icon: <Brain className='w-6 h-6'/>,
-                title: "AI Analysis",
-                description: "Get instant quizzes to test your understanding."
-              },
-              {
-                icon: <Play className='w-6 h-6'/>,
-                title: "Interactive exercises",
-                description: "Engage with AI-generated exercises to reinforce your learning."
-              },
-            ].map((feature, i ) => (
-              <Card key={i} className='p-6 hover:shadow-2xl transition-shadow'>
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
-              </Card>
-            ))
-          }
+  {
+    [
+      {
+        icon: <Headphones className='w-6 h-6'/>,
+        title: "Active Listening",
+        description: "Sharpen your listening skills by tuning into real-world conversations, helping you understand nuances and accents."
+      },
+      {
+        icon: <Brain className='w-6 h-6'/>,
+        title: "AI Analysis",
+        description: "Leverage our advanced AI to monitor your progress and provide insights into areas that need improvement."
+      },
+      {
+        icon: <Play className='w-6 h-6'/>,
+        title: "Interactive Exercises",
+        description: "Engage in interactive tasks tailored to reinforce vocabulary and grammar through fun, immersive challenges."
+      },
+    ].map((feature, i ) => (
+      <Card key={i} className='p-6 hover:shadow-2xl transition-shadow'>
+        <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-primary/10">
+          {feature.icon}
         </div>
+        <h3 className="text-xl font-semibold mb-2">
+          {feature.title}
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          {feature.description}
+        </p>
+      </Card>
+    ))
+  }
+</div>
+
       </section>
       <section className="py-10">
         <div className="relative rounded-2xl bg-primary p-8 md:p-12 overflow-hidden">
